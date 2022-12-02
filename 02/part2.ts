@@ -51,10 +51,10 @@ export function calcScore(
   otherShape: Shapes,
   expectedResult: ExpectedResult
 ): number {
-  let myShape: Shapes = otherShape; // Draw
-  if (expectedResult !== ExpectedResult.Draw) {
-    myShape = findShape(otherShape, expectedResult);
-  }
+  let myShape: Shapes =
+    expectedResult === ExpectedResult.Draw
+      ? otherShape
+      : findShape(otherShape, expectedResult);
 
   let totalScore = ShapeScore[myShape];
   totalScore += scores[otherShape][myShape];
