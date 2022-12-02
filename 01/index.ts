@@ -18,9 +18,7 @@ export function parseInput(input: string): Elf[] {
     }));
 }
 
-export function findElfWithHighestFoodCalories(
-  input: string
-): ElfWithTotalFoodCalories {
+export function solve(input: string): ElfWithTotalFoodCalories | null {
   const elfs: Elf[] = parseInput(input);
 
   return elfs

@@ -1,7 +1,22 @@
 import { describe, expect, test } from "@jest/globals";
-import { findElfWithHighestFoodCalories } from "./index";
+import { solve } from "./index";
 
 describe("find elf with highest number of food calories", () => {
+  test("should return the last elf when total is not unique", () => {
+    const input = `
+2000
+3000
+
+2000
+3000
+`;
+
+    expect(solve(input)).toEqual({
+      name: "elf2",
+      totalFoodCalories: 5000,
+    });
+  });
+
   test("should return elf4", () => {
     const input = `
 1000
@@ -20,7 +35,7 @@ describe("find elf with highest number of food calories", () => {
 10000
 `;
 
-    expect(findElfWithHighestFoodCalories(input)).toEqual({
+    expect(solve(input)).toEqual({
       name: "elf4",
       totalFoodCalories: 24000,
     });
@@ -2274,7 +2289,7 @@ describe("find elf with highest number of food calories", () => {
 5967
 `;
 
-    expect(findElfWithHighestFoodCalories(input)).toEqual({
+    expect(solve(input)).toEqual({
       name: "elf148",
       totalFoodCalories: 70613,
     });
