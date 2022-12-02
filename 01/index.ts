@@ -32,3 +32,18 @@ export function solve(input: string): ElfWithTotalFoodCalories | null {
         : current;
     });
 }
+
+export function solvePart2(input: string) {
+  const elfs: Elf[] = parseInput(input);
+
+  const data = elfs
+    .map((c) => ({
+      name: c.name,
+      totalFoodCalories: c.foodCalories.reduce((a, c) => a + c, 0),
+    }))
+    .sort((a, b) => (a.totalFoodCalories > b.totalFoodCalories ? -1 : 1))
+    .slice(0, 3)
+    .reduce((a, c) => a + c.totalFoodCalories, 0);
+
+  return data;
+}

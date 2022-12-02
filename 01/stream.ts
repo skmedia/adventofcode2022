@@ -1,7 +1,7 @@
 import fs from "fs";
 import readline from "readline";
 
-export async function findHighestInFile(file: string) {
+export async function solve(file: string) {
   const fileStream = fs.createReadStream(file);
 
   const rl = readline.createInterface({

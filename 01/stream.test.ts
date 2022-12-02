@@ -1,12 +1,12 @@
 import { describe, expect, test } from "@jest/globals";
-import { findHighestInFile } from "./stream";
+import { solve } from "./stream";
 import fs from "fs";
 
 describe("find elf with highest number of food calories in file", () => {
   test("should return elf148", () => {
-    expect(findHighestInFile(__dirname + "/input.txt")).resolves.toEqual({
-      name: "elf148",
-      totalFoodCalories: 70613,
+    expect(solve(__dirname + "/input.txt")).resolves.toEqual({
+      name: "elf209",
+      totalFoodCalories: 74198,
     });
   });
 });
