@@ -2,12 +2,6 @@
 //Scissors defeats Paper,
 //and Paper defeats Rock. If both players choose the same shape, the round instead ends in a draw.
 
-type GameInfo = {
-  other: ShapesOther;
-  me: ShapesMe;
-  score: number;
-};
-
 const ShapeScore = {
   X: 1,
   Y: 2,
