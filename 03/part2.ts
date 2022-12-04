@@ -1,7 +1,7 @@
 import fs from "fs";
 
-function log(...ags: any) {
-  console.log(...ags);
+function log(...args: any) {
+  console.log(...args);
 }
 
 function toNumber(char: string) {
@@ -38,18 +38,19 @@ function findCommonItems(groups: any) {
   return result;
 }
 
-export function parseInputNew(input: string): any {
-  const data = input.trim().split("\n");
+export function parseInput(input: string): string[][] {
+  const data: string[] = input.trim().split("\n");
 
   let cnt = 0;
   const groupPer = 3;
   let group: string[] = [];
   let groups: any = [];
-  data.forEach((line) => {
+  data.forEach((line: string) => {
     cnt++;
     group.push(line);
     if (cnt % groupPer === 0) {
-      groups.push(group.map((l) => l.split("")));
+      const b = group.map((l: string) => l.split(""));
+      groups.push(b);
       cnt = 0;
       group = [];
     }
@@ -59,7 +60,7 @@ export function parseInputNew(input: string): any {
 }
 
 export function solve(input: string) {
-  const data = parseInputNew(input);
+  const data = parseInput(input);
 
   return data
     .flatMap((group: string[]) => findCommonItems(group))

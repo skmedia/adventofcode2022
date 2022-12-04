@@ -2,8 +2,8 @@ import { describe, expect, test } from "@jest/globals";
 import { solve } from "./index";
 import fs from "fs";
 
-describe("rucksack compartments", () => {
-  test("solve part 1", () => {
+describe("day 3", () => {
+  test("part 1", () => {
     const input = `
     vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
@@ -16,7 +16,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
     expect(solve(input)).toEqual(157);
   });
 
-  describe("rucksack compartments from file", () => {
+  test("part 1 from file", () => {
     const input = fs.readFileSync(__dirname + "/input.txt", {
       encoding: "utf8",
       flag: "r",

@@ -2,8 +2,8 @@ import { describe, expect, test } from "@jest/globals";
 import { solve } from "./part2";
 import fs from "fs";
 
-describe("rock, paper and scissors game part 2", () => {
-  test("calc total game score according to strategy guide", () => {
+describe("day 2 - part 2", () => {
+  test("part 2", () => {
     const input = `
     A Y
     B X
@@ -13,7 +13,7 @@ describe("rock, paper and scissors game part 2", () => {
     expect(solve(input)).toEqual(12);
   });
 
-  test("calc total game score according to strategy guide from file part 2", () => {
+  test("part 2 from file", () => {
     const input = fs.readFileSync(__dirname + "/input.txt", {
       encoding: "utf8",
       flag: "r",
