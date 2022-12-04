@@ -32,14 +32,3 @@ export function solve(input: string) {
 
   return data.filter((v) => hasOverlap(v.r1, v.r2)).length;
 }
-
-const input = `
-2-4,6-8
-2-3,4-5
-5-7,7-9
-2-8,3-7
-6-6,4-6
-2-6,4-8
-`;
-
-console.log(solve(input));
