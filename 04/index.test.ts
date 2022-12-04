@@ -3,7 +3,7 @@ import { solve } from "./index";
 import fs from "fs";
 
 describe("day 4", () => {
-  test("solve part 1", () => {
+  test("part 1", () => {
     const input = `
     1-1,3-18
     2-4,6-8
@@ -17,7 +17,7 @@ describe("day 4", () => {
     expect(solve(input)).toEqual(2);
   });
 
-  describe("solve part 1 from file", () => {
+  test("part 1 from file", () => {
     const input = fs.readFileSync(__dirname + "/input.txt", {
       encoding: "utf8",
       flag: "r",

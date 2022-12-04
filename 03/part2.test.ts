@@ -16,7 +16,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
     expect(solve(input)).toEqual(70);
   });
 
-  describe("part 2 from file", () => {
+  test("part 2 from file", () => {
     const input = fs.readFileSync(__dirname + "/input.txt", {
       encoding: "utf8",
       flag: "r",

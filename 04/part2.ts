@@ -20,12 +20,9 @@ export function parseInput(input: string): { r1: number[]; r2: number[] }[] {
     }));
 }
 
-const hasOverlap = (r1: number[], r2: number[]) => {
-  return (
-    r1.filter((v) => r2.includes(v)).length ||
-    r2.filter((v) => r1.includes(v)).length
-  );
-};
+const hasOverlap = (r1: number[], r2: number[]) =>
+  r1.filter((v) => r2.includes(v)).length ||
+  r2.filter((v) => r1.includes(v)).length;
 
 export function solve(input: string) {
   const data = parseInput(input);
