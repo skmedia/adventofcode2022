@@ -1,37 +1,10 @@
 import fs from "fs";
+import { parseStack } from "./part2";
 
 function transpose(matrix: any) {
   return matrix[0].map((col: any, c: any) =>
     matrix.map((row: any, r: any) => matrix[r][c])
   );
-}
-
-export function parseStack(input: string) {
-  let lines = input.split("\n");
-
-  const hdr = lines.pop() as string;
-  const rows = hdr.split(" ").filter((v) => Number(v)).length;
-  const cellSize = 4;
-
-  const grid = [];
-  for (let i = 0; i < lines.length; i++) {
-    let r = [];
-    let start = 0;
-    let end = cellSize;
-    while (start < rows * cellSize) {
-      const l = lines[i].substring(start, end);
-      r.push(l.trim());
-      start += cellSize;
-      end += cellSize;
-    }
-    grid.push(r);
-  }
-
-  grid.reverse();
-  let data = transpose(grid);
-  data = data.map((r: any) => r.filter((r: any) => r.trim()));
-
-  return data;
 }
 
 type Move = {
@@ -71,9 +44,7 @@ export function solve(movesDate: string, stackData: string) {
     }
   });
 
-  const res = stack
-    .map((v: any) => v.pop())
-    .map((v: any) => v?.replace(/[^A-Z]/g, "").trim());
+  const res = stack.map((v: any) => v.pop());
 
   return res.join("");
 }
