@@ -1,7 +1,6 @@
 import fs from "fs";
 
 export async function solveStream(filePath: string, sLength: number) {
-  let found = 0;
   return new Promise((resolve, reject) => {
     var readable = fs.createReadStream(filePath, {
       encoding: "utf8",
